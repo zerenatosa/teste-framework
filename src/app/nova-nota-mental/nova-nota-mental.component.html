@@ -1,0 +1,41 @@
+<div class="container contact">
+  <section class="container">
+    <form class="formulario" (ngSubmit)="transferir()">
+        <h2 class="formulario_titulo">Faça aqui sua nova nota mental</h2>
+
+        <div class="form-field">
+          <label class="form-field_label" for="nomeDaNota">nome da nota</label>
+          <input class="form-field_input" id="nomeDaNota" type="text" [(ngModel)]="nomeDaNota" name ="nomeDaNota"/>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field_label" for="intervenienteDaNota">interveniente</label>
+          <input class="form-field_input" id="intervenienteDaNota" type="text" [(ngModel)] = "intervenienteDaNota" name ="intervenienteDaNota" />
+        </div>
+
+        <div class="form-field">
+          <label class="form-field_label" for="escopoDaNota">escopo</label>
+          <input class="form-field_input" id="escopoDaNota" type="text" [(ngModel)] = "escopoDaNota" name ="escopoDaNota"/>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field_label" for="vencimentoDaNota">vencimento</label>
+          <input class="form-field_input" id="vencimentoDaNota" type="date" [(ngModel)] = "vencimentoDaNota" name ="vencimentoDaNota"/>
+        </div>
+
+        <div class="form-field">
+          <label class="form-field_label" for="descricaoDaNota">descrição</label>
+          <textarea rows = "5" cols = "60" class="materialize-textarea" id="descricaoDaNota" type="text" [(ngModel)] = "descricaoDaNota" name ="descricaoDaNota"></textarea>
+        </div>
+
+        <div class="botao-wrapper">
+          <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" name="action">gravar
+            <i class="material-icons right">send</i>
+          </button>
+      </div>
+      </form>
+    </section>
+  </div>
+
+
+<app-voltar></app-voltar>

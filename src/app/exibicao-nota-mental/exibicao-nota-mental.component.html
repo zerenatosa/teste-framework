@@ -1,0 +1,34 @@
+<!-- <p> aquio vai notga {{conteudoDaNota?.nomeDaNota}} </p> -->
+
+<div *ngIf="conteudoDaNotas.length > 0; else listaVazia">
+<table  class = "responsive-table highlight">
+  <thead>
+    <th>nome da nota</th>
+    <th>interveniente</th>
+    <th>dias aberto</th>
+    <th>vencimento</th>
+    <th>descrição da nota</th>
+    <th>escopo</th>
+    <th>ação</th>
+  </thead>
+  <tbody  >
+  <!-- <tbody> -->
+    <tr>
+    <tr *ngFor="let nota of conteudoDaNotas">
+      <td>{{nota?.nomeDaNota}}</td>
+      <td>{{nota?.intervenienteDaNota}}</td>
+      <td>em construção</td>
+      <td>{{nota?.vencimentoDaNota | date: 'EEEE, MMMM d, y'}}</td>
+      <td>{{nota?.descricaoDaNota}}</td>
+      <td>{{nota?.escopoDaNota}}</td>
+      <td><a href="#"><i class="material-icons">edit</i></a><a href="#"><i class="material-icons">delete</i></a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<ng-template #listaVazia>
+  <p class="flow-text center card-panel teal #bbdefb blue lighten-4"  >Isto é estranho, mas você está em dia. Não há notas mentais.</p>
+</ng-template>
+
+
+<app-voltar></app-voltar>

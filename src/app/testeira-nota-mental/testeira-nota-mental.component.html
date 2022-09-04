@@ -1,0 +1,60 @@
+<!--
+<p> akakakak</p>
+<nav>
+  <div class="nav-wrapper blue-grey darken-4 accent-4">
+    <div class="container">
+      <ul class="center-align">
+        <li>Bem vindo ao controle de notas mentais</li>
+        <li><a routerLink= '/nova-nota-mental' class="flow-text">Incluir nova nota</a></li>
+        <li><a href="#" class="flow-text">Ver notas concluídas</a></li>
+        <li>feature-atividade-09</li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!-- menu -->
+<div class="navbar-fixed" style="z-index: 1001 !important">
+  <nav>
+    <div class="nav-wrapper blue-grey darken-4 accent-4">
+      <div class="container">
+        <a class="brand-logo" href="#">
+          <img
+          src="/assets/resources/images/brain.png"
+          class="img-responsive"
+          height="64px"
+        />
+        </a>
+        <a href="/index.html" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a routerLink="/nova-nota-mental" class="flow-text">nova nota mental</a></li>
+          <li><a routerLink="/exibicao-nota-mental" class="flow-text">suas notas mentais</a></li>
+          <li><a routerLink="cadastrar"  class="flow-text"></a></li>
+          <li>Atividade 09 - Cadastro de rotas e navegação entre páginas</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="sidenav grey" id="mobile-demo" #mobile>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="center">
+          <img
+            class="circle responsive-img"
+            src="/assets/resources/images/brain.png"
+          />
+        </div>
+      </div>
+    </div>
+    <li><a routerLink="/nova-nota-mental" class="flow-text">nova nota mental</a></li>
+    <li><a routerLink="/exibicao-nota-mental" class="flow-text">suas notas mentais</a></li>
+    <li><a routerLink="cadastrar" class="flow-text"></a></li>
+    <app-sobre-nota-mental></app-sobre-nota-mental>
+  </ul>
+
+</div>
+<!-- fim menu -->
+
