@@ -6,4 +6,7 @@ export interface ConteudoNota {
   escopoDaNota: string;
   vencimentoDaNota?: string;
   descricaoDaNota: string;
+  situacaoNota:string;
+  dataConclusao:string;
+  diasAberto:number;
 }

@@ -14,25 +14,46 @@
 </nav> -->
 
 <!-- menu -->
-<div class="navbar-fixed" style="z-index: 1001 !important">
+<!-- <div class="navbar-fixed blue-grey darken-4 accent-4" style="z-index: 1001 !important" > -->
+
+  <!-- painel serviços  -->
+  <!-- <div id="painel-servicos" style="z-index: 1001 !important" >
+    <h5 class="center-align flow-text" style="color:white">notas mentais - te lembrando do que você insiste em esquecer!!</h5>
+  </div> -->
+  <!-- fim painel serviços -->
+<!-- </div> -->
+
+<div class="nav-wrapper" style="z-index: 1001 !important">
   <nav>
+
     <div class="nav-wrapper blue-grey darken-4 accent-4">
+
       <div class="container">
-        <a class="brand-logo" href="#">
+
+<!--         <a class="brand-logo" href="#">
           <img
           src="/assets/resources/images/brain.png"
           class="img-responsive"
           height="64px"
         />
-        </a>
-        <a href="/index.html" data-target="mobile-demo" class="sidenav-trigger">
+        </a> -->
+         <a href="/index.html" data-target="mobile-demo" class="sidenav-trigger">
           <i class="material-icons">menu</i>
         </a>
-        <ul class="right hide-on-med-and-down">
+
+        <ul class="hide-on-med-and-down">
+
+          <li>
+          <img
+            src="/assets/resources/images/brain.png"
+            class="img-responsive"
+            height="54px"
+          /></li>
           <li><a routerLink="/nova-nota-mental" class="flow-text">nova nota mental</a></li>
-          <li><a routerLink="/exibicao-nota-mental" class="flow-text">suas notas mentais</a></li>
-          <li><a routerLink="cadastrar"  class="flow-text"></a></li>
-          <li>Atividade 09 - Cadastro de rotas e navegação entre páginas</li>
+          <li><a routerLink="/exibicao-nota-mental" class="flow-text">notas mentais em ser</a></li>
+          <li><a routerLink="notas-concluidas"  class="flow-text">notas mentais concluídas</a></li>
+          <li><a routerLink="" class="flow-text">index</a></li>
+          <li>Atividade 12</li>
         </ul>
       </div>
     </div>
@@ -41,18 +62,24 @@
   <ul class="sidenav grey" id="mobile-demo" #mobile>
     <div class="row">
       <div class="col s8 offset-s2">
-        <div class="center">
+<!--         <div class="center">
           <img
             class="circle responsive-img"
             src="/assets/resources/images/brain.png"
+            height="24px"
           />
-        </div>
+        </div> -->
       </div>
     </div>
+<!--     <li> <img
+      class="circle responsive-img"
+      src="/assets/resources/images/brain.png"
+      height="24px"
+    /></li> -->
     <li><a routerLink="/nova-nota-mental" class="flow-text">nova nota mental</a></li>
     <li><a routerLink="/exibicao-nota-mental" class="flow-text">suas notas mentais</a></li>
-    <li><a routerLink="cadastrar" class="flow-text"></a></li>
-    <app-sobre-nota-mental></app-sobre-nota-mental>
+    <li><a routerLink="notas-concluidas"  class="flow-text">notas mentais concluídas</a></li>
+    <!-- <app-sobre-nota-mental></app-sobre-nota-mental> -->
   </ul>
 
 </div>

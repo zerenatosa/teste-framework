@@ -1,41 +1,97 @@
+
 <div class="container contact">
   <section class="container">
-    <form class="formulario" (ngSubmit)="transferir()">
+    <form class="formulario" #form="ngForm" (ngSubmit)="transferir()">
         <h2 class="formulario_titulo">Faça aqui sua nova nota mental</h2>
 
         <div class="form-field">
           <label class="form-field_label" for="nomeDaNota">nome da nota</label>
-          <input class="form-field_input" id="nomeDaNota" type="text" [(ngModel)]="nomeDaNota" name ="nomeDaNota"/>
+          <input
+            class="form-field_input validate"
+            id="nomeDaNota"
+            type="text"
+            [(ngModel)]="nomeDaNota"
+            name ="nomeDaNota"
+            pattern="[a-zA-Z Çç0-9]{1,30}"
+            #name="ngModel"
+            required
+          />
+          <div class="red-text" [hidden]="name.valid || name.untouched">
+            Este é apenas o nome da nota. Deve ter no mínimo 1 e no máximo 30 caracteres. Somente letras e números. Símbolos e acentos não são permitidos.
+          </div>
         </div>
 
         <div class="form-field">
           <label class="form-field_label" for="intervenienteDaNota">interveniente</label>
-          <input class="form-field_input" id="intervenienteDaNota" type="text" [(ngModel)] = "intervenienteDaNota" name ="intervenienteDaNota" />
+          <input
+          class="form-field_input"
+          id="intervenienteDaNota"
+          type="text"
+          [(ngModel)] = "intervenienteDaNota"
+          name ="intervenienteDaNota"
+          pattern="[a-zA-Z Çç0-9]{1,15}"
+          #interveniente = "ngModel"
+          required
+          />
+          <div class="red-text" [hidden]="interveniente.valid || interveniente.untouched">
+            Use um nome curto para lembrar das pessoas. Deve ter no mínimo 1 e no máximo 15 caracteres. Somente letras e números. Símbolos e acentos não são permitidos.
+          </div>
         </div>
 
-        <div class="form-field">
+         <div class="form-field">
           <label class="form-field_label" for="escopoDaNota">escopo</label>
-          <input class="form-field_input" id="escopoDaNota" type="text" [(ngModel)] = "escopoDaNota" name ="escopoDaNota"/>
+          <input
+          class="form-field_input"
+          id="escopoDaNota"
+          type="text"
+          [(ngModel)] = "escopoDaNota"
+          name ="escopoDaNota"
+          pattern="[a-zA-Z Çç0-9]{1,9}"
+          #escopo = "ngModel"
+          required
+          />
+          <div class="red-text" [hidden]="escopo.valid || escopo.untouched">
+            Use um nome curto para lembrar do escopo. Deve ter no mínimo 1 e no máximo 9 caracteres. Somente letras ou espaço em branco.
+          </div>
         </div>
 
-        <div class="form-field">
+
+
+<!--         <div class="form-field">
           <label class="form-field_label" for="vencimentoDaNota">vencimento</label>
           <input class="form-field_input" id="vencimentoDaNota" type="date" [(ngModel)] = "vencimentoDaNota" name ="vencimentoDaNota"/>
-        </div>
+        </div> -->
 
         <div class="form-field">
           <label class="form-field_label" for="descricaoDaNota">descrição</label>
-          <textarea rows = "5" cols = "60" class="materialize-textarea" id="descricaoDaNota" type="text" [(ngModel)] = "descricaoDaNota" name ="descricaoDaNota"></textarea>
+          <textarea
+          rows = "5"
+          cols = "60"
+          class="materialize-textarea"
+          id="descricaoDaNota"
+          type="text"
+          [(ngModel)] = "descricaoDaNota"
+          name ="descricaoDaNota"
+          pattern="[a-zA-Zà-úÀ-Ú0-9 Çç]{10,250}"
+          #descricao = "ngModel"
+          required
+          ></textarea>
+          <div class="red-text" [hidden]="descricao.valid || descricao.untouched">
+            <p>seja gential com seu eu de amanhã.</p>
+            <p>não economize na descrição.</p>
+            <p>no mínimo 10 e no máximo 250 letras. Somente letras.</p>
+          </div>
         </div>
 
         <div class="botao-wrapper">
-          <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" name="action">gravar
+          <button class="btn waves-effect waves-light blue-grey lighten-1" type="submit" name="action" [disabled]="!form.valid">gravar
             <i class="material-icons right">send</i>
           </button>
       </div>
       </form>
     </section>
   </div>
+
 
 
 <app-voltar></app-voltar>

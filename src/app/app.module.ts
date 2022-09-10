@@ -14,6 +14,7 @@ import { VoltarComponent } from './voltar/voltar.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NotasConcluidasComponent } from './notas-concluidas/notas-concluidas.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -26,7 +27,8 @@ registerLocaleData(localePt, 'pt');
     SobreNotaMentalComponent,
     TesteiraNotaMentalComponent,
     ConteudoDestaVersaoComponent,
-    VoltarComponent
+    VoltarComponent,
+    NotasConcluidasComponent
   ],
   imports: [
     BrowserModule,

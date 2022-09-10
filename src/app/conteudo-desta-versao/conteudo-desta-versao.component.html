@@ -1,17 +1,176 @@
 <blockquote class="flow-text">
-  <h3> Atividade 09 - Cadastro de rotas e navegação entre páginas</h3>
+  <h3 style="font-weight:bold">Atividade 12 - Cadastro com requisições assíncronas</h3>
   <br/>
-  <h4 style="font-weight:bold">Mapear componentes à rotas no módulo de rotas</h4>
-  <p>Consta no módulo app-routin.modulo.ts</p>
+  <h4>link para o projeto completo <a href='https://github.com/zerenatosa/controle-de-notas-mentais' target="_blank" >aqui</a> </h4>
   <br/>
-  <h4 style="font-weight:bold">Criar navegação entre páginas por meio de rotas</h4>
-  <p>Os botões de voltar, por exemplo, fazem navegação por rotas</p>
+  <h4 style="font-weight:bold">Fazer requisições a API com tratamento da resposta com Promises.</h4>
+  <p>Providenciado</p>
   <br/>
-  <h4 style="font-weight:bold">Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output</h4>
-  <p>Consta em product-panel.component.ts</p>
+  <h4 style="font-weight:bold">Cadastrar uma entidade no JSON Server</h4>
+  <p> As dependências necessárias para o bom funcionamento da aplicação estão no arquivo "package.json" </p>
+  <p> Pode-se verificar na linha 22 do arquivo "package.json" a dependência "json-server": "^0.17.0" </p>
+  <p> Para funcionamento correto deve-se acessar via terminal a pasta "src/app/dados" e executar o comando "json-server --watch db.json"</p>
+  <p> O conteúdo deve estar disponível no caminho "http://localhost:3000/conteudoNotas". Se necessário, atualizar o endereço na variável "url" do arquivo "src\app\services\service-notas-mentais.service.ts" </p>
+  <p> É possível verificar a utilização do JSON server arquivos "src\app\services\service-notas-mentais.service.ts", "src\app\nova-nota-mental\nova-nota-mental.component.ts", "src\app\exibicao-nota-mental\exibicao-nota-mental.component.ts"</p>
   <br/>
-  <h4 style="font-weight:bold">Passar dados entre componentes que representam diferentes telas via parâmetros de rotas</h4>
-  <p>Consta em shopping-list.component.ts</p>
 </blockquote>
+
+<blockquote class="flow-text">
+
+
+<form action="#">
+<h3 style="font-weight:bold">Avaliação - Projeto Completo</h3>
+<h4 style="font-weight:bold">Tópicos/Checklist</h4>
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.</span>
+      <p>link disponível <a href='https://github.com/zerenatosa/controle-de-notas-mentais' target="_blank" >aqui</a></p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).</span>
+      <p>verificar dependências instaladas no package.json</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Apresentar as telas com layout responsivo usando ou não algum framework CSS.</span>
+      <p>verificar arquivos "src\app\testeira-nota-mental\testeira-nota-mental.component.ts" e "src\app\testeira-nota-mental\testeira-nota-mental.component.html"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Construir páginas web com o conceito de componentes. </span>
+      <p>providenciado</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Criar o layout da aplicação com componentes, ou seja, o cabeçalho e rodapé precisam ser componentes.</span>
+      <p>verificar no arquivo "src\app\app.component.html" </p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Usar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).</span>
+      <p>disponível em diversos componentes da aplicação.</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" disabled="disabled" />
+      <span>Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output.</span>
+      <p>&nbsp;</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Mapear componentes à rotas no módulo de rotas.</span>
+      <p>verificar arquivo "src\app\app-routing.module.ts"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Criar navegação entre páginas por meio de rotas.</span>
+      <p>verificar aquivo "src\app\app-routing.module.ts"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" disabled="disabled" />
+      <span>Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.</span>
+      <p>&nbsp;</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Validar campos do formulário com REGEX e apresentar os erros.</span>
+      <p>verificar o arquivo "src\app\nova-nota-mental\nova-nota-mental.component.html"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Desabilitar o botão de submit enquanto o formulário está inválido.</span>
+      <p>verificar o arquivo "src\app\nova-nota-mental\nova-nota-mental.component.html"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Fazer requisições a API com tratamento da resposta com Promises ou Observables.</span>
+      <p>verificar os arquivos "src\app\services\service-notas-mentais.service.ts", "src\app\nova-nota-mental\nova-nota-mental.component.ts", "src\app\notas-concluidas\notas-concluidas.component.ts", "src\app\exibicao-nota-mental\exibicao-nota-mental.component.ts"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Cadastrar uma entidade usando uma API (JSON Server ou Firebase).</span>
+      <p>verificar os arquivos "src\app\services\service-notas-mentais.service.ts", "src\app\nova-nota-mental\nova-nota-mental.component.ts", "src\app\notas-concluidas\notas-concluidas.component.ts", "src\app\exibicao-nota-mental\exibicao-nota-mental.component.ts"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Apresentar uma lista de dados com a diretiva estrutural ngFor.</span>
+      <p>verificar os arquivos "src\app\exibicao-nota-mental\exibicao-nota-mental.component.html" e "src\app\notas-concluidas\notas-concluidas.component.html"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Usar a diretiva ngIf.</span>
+      <p>verificar os arquivos "src\app\exibicao-nota-mental\exibicao-nota-mental.component.html" e "src\app\notas-concluidas\notas-concluidas.component.html"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" class="filled-in" checked="checked" disabled="disabled" />
+      <span>Formatar a apresentação de dados com Pipes.</span>
+      <p>verificar os arquivos "src\app\exibicao-nota-mental\exibicao-nota-mental.component.html" e "src\app\notas-concluidas\notas-concluidas.component.html"</p>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      <input type="checkbox" disabled="disabled" />
+      <span>Build e deploy da aplicação.</span>
+    </label>
+  </p>
+
+
+</form>
+
+</blockquote>
+
+
+
+
 
 <app-voltar></app-voltar>

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConteudoDestaVersaoComponent } from './conteudo-desta-versao/conteudo-desta-versao.component';
 import { ExibicaoNotaMentalComponent } from './exibicao-nota-mental/exibicao-nota-mental.component';
 import { LandPageComponent } from './land-page/land-page.component';
+import { NotasConcluidasComponent } from './notas-concluidas/notas-concluidas.component';
 import { NovaNotaMentalComponent } from './nova-nota-mental/nova-nota-mental.component';
 import { SobreNotaMentalComponent } from './sobre-nota-mental/sobre-nota-mental.component';
 import { TesteiraNotaMentalComponent } from './testeira-nota-mental/testeira-nota-mental.component';
@@ -15,6 +16,8 @@ const routes: Routes = [
   {path: 'nova-nota-mental', component: NovaNotaMentalComponent},
   {path: 'land-page', component: LandPageComponent},
   {path: 'conteudo-desta-versao', component: ConteudoDestaVersaoComponent},
+  {path: 'notas-concluidas', component: NotasConcluidasComponent},
+
   ];
 
 

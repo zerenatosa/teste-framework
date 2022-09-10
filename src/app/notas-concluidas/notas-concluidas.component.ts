@@ -5,11 +5,11 @@ import {HttpClient} from '@angular/common/http';
 import { ThisReceiver } from '@angular/compiler';
 
 @Component({
-  selector: 'app-exibicao-nota-mental',
-  templateUrl: './exibicao-nota-mental.component.html',
-  styleUrls: ['./exibicao-nota-mental.component.css']
+  selector: 'app-notas-concluidas',
+  templateUrl: './notas-concluidas.component.html',
+  styleUrls: ['./notas-concluidas.component.css']
 })
-export class ExibicaoNotaMentalComponent implements OnInit {
+export class NotasConcluidasComponent implements OnInit {
 
   private url = 'http://localhost:3000/conteudoNotas';
  @Input() conteudoDaNotas: any[] = [];
@@ -32,7 +32,7 @@ diasAberto : number =  (this.dataAux.getDate() - this.vencimentoDaNota.getDate()
 
   ngOnInit(): void {
     /* this.conteudoDaNotas = this.service.conteudoNotas; */
-    this.service.todas().subscribe((conteudoDaNotas: ConteudoNota[]) =>{
+    this.service.todas11().subscribe((conteudoDaNotas: ConteudoNota[]) =>{
       console.table(conteudoDaNotas);
       this.conteudoDaNotas = conteudoDaNotas;
     }
@@ -53,21 +53,9 @@ diasAberto : number =  (this.dataAux.getDate() - this.vencimentoDaNota.getDate()
       this.ngOnInit();
    }
 
-   concluirNota(userId: string, vencimentoDaNota:any){
-    const d = new Date('2022/01/01');
-    const d2 = d.toString();
-    const date1 = new Date();
-    const date2 = new Date(vencimentoDaNota);
-    var diferenca = Math.abs(date1.getTime() - date2.getTime()); //diferença em milésimos e positivo
-    var dia = 1000*60*60*24; // milésimos de segundo correspondente a um dia
-    var total = Math.round(diferenca/dia); //valor total de dias arredondado
-
-
-    /* alert(d2) */
-    this.httpClient.patch('http://localhost:3000/conteudoNotas/' + userId,{"situacaoNota": "concluida", "dataConclusao":date1, "diasAberto":total}).subscribe((res:any)=> {
-      /* alert('nota concluída!'); */
-      alert('sua nota mental foi concluída em ' + total + ' dias')
-      this.ngOnInit();
+   concluirNota(userId: string){
+    this.httpClient.patch('http://localhost:3000/conteudoNotas/' + userId,{"situacaoNota": "concluida"}).subscribe((res:any)=> {
+      alert('nota concluída!');
 
     })
     this.ngOnInit();

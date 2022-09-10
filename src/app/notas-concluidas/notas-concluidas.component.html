@@ -1,0 +1,55 @@
+<!-- <p> aquio vai notga {{conteudoDaNota?.nomeDaNota}} </p> -->
+<div class="container about" >
+
+  <!-- painel serviços  -->
+  <div id="painel-servicos" >
+    <h5 class="center-align">notas mentais concluídas</h5>
+    <hr />
+
+  </div>
+  <!-- fim painel serviços -->
+</div>
+
+
+<div *ngIf="conteudoDaNotas.length > 0; else listaVazia">
+  <table  class = "responsive-table highlight">
+    <thead>
+      <th>id</th>
+      <th>nome da nota</th>
+      <th>interveniente</th>
+      <th>data conclusão</th>
+      <th>data inclusão</th>
+      <th>dias aberto</th>
+      <th>descrição da nota</th>
+      <th>escopo</th>
+      <th>situacao da nota</th>
+      <th>ação</th>
+    </thead>
+    <tbody  >
+    <!-- <tbody> -->
+      <!-- <tr> -->
+      <tr *ngFor="let nota of conteudoDaNotas">
+
+        <td><div align="center">{{nota?.id}}</div></td>
+        <td>{{nota?.nomeDaNota}}</td>
+        <td>{{nota?.intervenienteDaNota}}</td>
+        <td>{{nota?.dataConclusao | date: 'EEEE, MMMM d, y'}}</td>
+        <td>{{nota?.vencimentoDaNota | date: 'EEEE, MMMM d, y'}}</td>
+        <td>{{nota?.diasAberto}}</td>
+        <td>{{nota?.descricaoDaNota}}</td>
+        <td>{{nota?.escopoDaNota}}</td>
+        <td>{{nota?.situacaoNota}}</td>
+        <td><button (click) = "deletarNota(nota?.id)" ><i class="material-icons">delete</i></button>&nbsp;&nbsp;<button (click) = "concluirNota(nota?.id)" ><i class="material-icons">done</i></button></td>
+        <!-- <td><button (click) = "concluirNota(nota?.id)" ><i class="material-icons">done</i></button></td> -->
+        <!-- <td><a (click) = "deletarNota(nota?.id)"><i class="material-icons">edit</i></a><a href="#"><i class="material-icons">delete</i></a></td> -->
+
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <ng-template #listaVazia>
+    <p class="flow-text center card-panel teal #bbdefb blue lighten-4"  >Isto é estranho, mas você está em dia. Não há notas mentais.</p>
+  </ng-template>
+
+
+  <app-voltar></app-voltar>

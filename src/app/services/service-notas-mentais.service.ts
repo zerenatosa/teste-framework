@@ -22,8 +22,15 @@ export class ServiceNotasMentaisService {
    }
 
    todas(): Observable<ConteudoNota[]>  {
-    return this.httpClient.get<ConteudoNota[]>(this.url);
 
+
+    return this.httpClient.get<ConteudoNota[]>(this.url + '?situacaoNota=em ser');
+
+
+   }
+
+   todas11(): Observable<ConteudoNota[]>{
+    return this.httpClient.get<ConteudoNota[]>('http://localhost:3000/conteudoNotas?situacaoNota=concluida')
    }
 
 
@@ -33,6 +40,13 @@ export class ServiceNotasMentaisService {
    return this.httpClient.post<ConteudoNota>(this.url,conteudoNota);
 
 
+   }
+
+
+   deletarNota(userId: string){
+      this.httpClient.delete(this.url + userId).subscribe((res:any)=> {
+        alert('deletei');
+      })
    }
 
 }

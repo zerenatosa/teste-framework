@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ServiceNotasMentaisService } from '../services/service-notas-mentais.service';
 import { ConteudoNota } from '../models/conteudoNota';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nova-nota-mental',
@@ -21,7 +22,7 @@ export class NovaNotaMentalComponent implements OnInit {
 
 
 
-  constructor(private service: ServiceNotasMentaisService) { }
+  constructor(private service: ServiceNotasMentaisService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -37,16 +38,24 @@ export class NovaNotaMentalComponent implements OnInit {
   transferir(){
     console.log('solicitado transferencia');
     console.log(this.nomeDaNota);
+    const d = new Date();
+
     const conteudoNota : ConteudoNota = {nomeDaNota: this.nomeDaNota,
                           intervenienteDaNota: this.intervenienteDaNota,
                           escopoDaNota: this.escopoDaNota,
-                          vencimentoDaNota: this.vencimentoDaNota,
-                          descricaoDaNota: this.descricaoDaNota};
+                          vencimentoDaNota: d.toString(),
+                          descricaoDaNota: this.descricaoDaNota,
+                          situacaoNota:"em ser",
+                          dataConclusao: '',
+                          diasAberto:0};
     /* this.aoTransferir.emit(conteudoNota); */
     this.service.adicionarNovaNota(conteudoNota).subscribe(resultado => {
       console.log(resultado);
       this.limparCampos;
+      alert('Nota mental ' + conteudoNota.nomeDaNota + ' gravada com sucesso!!')
+      this.router.navigate(['/land-page'])
     }, error => console.error(error));
+
 
     /* this.limparCampos(); */
   }
